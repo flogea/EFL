@@ -1,0 +1,22 @@
+.inputBlock {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .input {
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.055);
+    outline: none;
+    color: white;
+    margin: 3px 0;
+    font-size: 16px;
+    padding: 0.5rem;
+
+    &:focus {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  }
+}
