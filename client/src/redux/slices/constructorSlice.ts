@@ -1,7 +1,50 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+type ContentInformation = {
+  id: string;
+  data: {
+    blockName:
+      | 'TextBlock'
+      | 'FileBlock'
+      | 'InputBlock'
+      | 'PictureBlock'
+      | 'TableBlock'
+      | 'TitleBlock';
+    content: {
+      text?: string;
+      url?: string;
+      label?: string;
+      rows?: number;
+      cols?: number;
+      tableName?: string;
+      tableContent?: number[] | string[];
+      inputType?:
+        | 'button'
+        | 'checkbox'
+        | 'date'
+        | 'email'
+        | 'file'
+        | 'number'
+        | 'password'
+        | 'radio'
+        | 'range'
+        | 'tel'
+        | 'text';
+      placeholder?: string;
+      title?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+    };
+    options?: {
+      onChange?: () => void;
+      contentEditable?: boolean;
+      onClick?: () => void;
+      onDoubleClick?: () => void;
+      disabled?: boolean;
+    };
+  };
+};
+
 interface IConstructorBlocks {
-  blocks: any[];
+  blocks: ContentInformation[];
 }
 
 const initialState: IConstructorBlocks = {

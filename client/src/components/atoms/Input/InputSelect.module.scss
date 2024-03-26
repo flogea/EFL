@@ -1,0 +1,12 @@
+.select {
+  background: rgba(var(--background-secondary-rgb));
+  // border: 1px solid rgba(var(--font-secondary-rgb));
+  border: none;
+  border-radius: 4px;
+  height: 100%;
+  padding: 0.5rem;
+  color: rgba(var(--font-secondary-rgb));
+  font-size: 16px;
+  outline: none;
+  text-align: left;
+}

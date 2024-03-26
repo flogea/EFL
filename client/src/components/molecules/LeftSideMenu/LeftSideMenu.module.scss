@@ -1,0 +1,38 @@
+@import '../../../styles/colors';
+@import '../../../styles/rounding';
+
+.leftSideMenu {
+  width: 20vw;
+  height: 100vh;
+  border-right: 1px solid $ctrl_Liberty_secondary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .links {
+    width: 80%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      width: 100%;
+      text-decoration: none;
+
+      .navlink {
+        color: $text_primary_buttons;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 0.6rem;
+        border-radius: $borderRadiusS;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $input_dark;
+        }
+      }
+    }
+  }
+}

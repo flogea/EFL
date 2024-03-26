@@ -1,14 +1,26 @@
 import React from 'react';
 
 import styles from './TextBlock.module.scss';
+import { useAppSelector } from '../../../hooks/reduxHook';
 
 type TTextBlock = {
+  id?: string,
   onData?: any;
 };
 
-function TextBlock({ onData }: TTextBlock) {
+function TextBlock({ id }: TTextBlock) {
+
+
+
   const [isEditable, setIsEditable] = React.useState(false);
   const [content, setContent] = React.useState('');
+  const data = useAppSelector(state => state.labConstructor.blocks)
+
+  React.useEffect(() => {
+    // const currentData = 
+
+    console.log(data.filter((currentId) => currentId.id === id)[0].data.content.text!)
+  }, [])
 
   const changeText = () => {
     setIsEditable(true);
@@ -17,10 +29,6 @@ function TextBlock({ onData }: TTextBlock) {
   function handleInput(event) {
     setContent(event.target.innerHTML);
   }
-
-  React.useEffect(() => {
-    onData(content);
-  }, [content]);
 
   return (
     <>

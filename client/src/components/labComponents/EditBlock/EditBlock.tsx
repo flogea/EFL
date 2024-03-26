@@ -31,7 +31,8 @@ function EditBlock({ children, id }: { children: any; id: string }) {
       <div className="leftBlocks">
         <button className="contentBtn">Редактировать</button>
       </div>
-      <div className="mainContent">{React.cloneElement(children, { onData: handleData })}</div>
+      <div className="mainContent">{React.cloneElement(children, { id: id })}</div>
+      {/* <div className="mainContent">{children}</div> */}
       <div className="rightBlocks">
         <div className="editLine">
           <button>

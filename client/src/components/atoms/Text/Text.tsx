@@ -19,6 +19,7 @@ export const Text: FC<TextProps> = ({
   className,
   size,
   theme = 'primary',
+  onClick,
 }) => {
   const Text = ({ ...props }: HTMLAttributes<HTMLElement>) => createElement(tag, props, children);
 
@@ -29,5 +30,5 @@ export const Text: FC<TextProps> = ({
     [className as string]: className,
   });
 
-  return <Text className={textClasses}>{children}</Text>;
+  return <Text onClick={onClick} className={textClasses}>{children}</Text>;
 };

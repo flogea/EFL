@@ -1,0 +1,141 @@
+@import '../../../styles/_colors.scss';
+@import '../../../styles/_fonts.scss';
+@import '../../../styles/_rounding.scss';
+
+.btn {
+  border-radius: $borderRadiusM;
+  font-weight: map-get($font-weight, B);
+  font-size: map-get($font-size, L);
+  line-height: map-get($line-height, L);
+  box-sizing: border-box;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    border: none;
+  }
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.btn-size {
+  &_s {
+    line-height: map-get($line-height, S);
+    padding: 4px 16px;
+    font-size: map-get($font-size, S);
+    font-weight: map-get($font-weight, M);
+  }
+  &_m {
+    line-height: map-get($line-height, S);
+    padding: 12px 24px;
+    font-size: map-get($font-size, S);
+    font-weight: map-get($font-weight, SB);
+  }
+  &_l {
+    line-height: map-get($line-height, M);
+    padding: 12px 24px;
+    font-size: map-get($font-size, L);
+    font-weight: map-get($font-weight, B);
+  }
+}
+
+.btn-width {
+  &_auto {
+    width: auto;
+  }
+  &_max {
+    width: 100%;
+  }
+}
+
+.theme {
+  &_primary {
+    background-color: $ctrl_Liberty;
+    color: $text_primary_buttons;
+    transition: background-color 300ms ease-out;
+    &:hover {
+      background-color: $ctrl_Liberty_hover;
+      color: $text_primary_buttons;
+    }
+    &:active {
+      background-color: $ctrl_Liberty_pressed;
+    }
+  }
+
+  &_icon {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0;
+    border-radius: 50%;
+    font-size: map-get($font-size, XS);
+    font-weight: map-get($font-weight, R);
+    color: $text_secondary;
+
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &_secondary {
+    border: 1px solid $ctrl_Liberty;
+    background-color: $bg_primary;
+    color: $ctrl_Liberty;
+    transition: background-color 300ms ease-out;
+
+    &:hover {
+      border: 1px solid $ctrl_Liberty;
+    }
+    &:active {
+      border: 1px solid $text_action;
+      background: $bg_blocks;
+      color: $text_action;
+    }
+  }
+
+  &_third {
+    border: none;
+    background-color: $bg_blocks;
+    color: $text_secondary;
+    transition: background-color 300ms ease-out;
+  }
+
+  &_tertiary {
+    text-decoration: underline;
+    color: $ctrl_Liberty;
+    background-color: $bg_primary;
+    font-weight: map-get($font-weight, R);
+    padding: 0;
+
+    &:hover {
+      color: $ctrl_Liberty_hover;
+    }
+    &:active {
+      background-color: $bg_primary;
+      color: $ctrl_Liberty_pressed;
+      border: none;
+    }
+  }
+}
+
+.btn-disabled {
+  border: 1px solid $separator;
+  background-color: $ctrl_Liberty_secondary;
+  color: $text_secondary;
+  &:disabled {
+    background-color: $ctrl_Liberty_secondary;
+  }
+  &:hover {
+    border: 1px solid $separator;
+    opacity: 1;
+    cursor: default;
+    color: $text_secondary;
+  }
+}

@@ -32,3 +32,7 @@ export const emailValidator = {
     message: 'Некорректно введена почта',
   },
 };
+
+export const baseValidator = {
+  required: 'Поле обязательно к заполнению',
+};

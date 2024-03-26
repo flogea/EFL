@@ -1,0 +1,69 @@
+.test_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  .test_block {
+    width: 580px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background: rgba(var(--background-secondary-rgb));
+    border-radius: 16px;
+    gap: 16px;
+    color: rgba(var(--font-rgb));
+
+    .question {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .answers {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .answer {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .delete_btn {
+          cursor: pointer;
+        }
+      }
+
+      .add_variant_btn {
+        cursor: pointer;
+        color: rgba(var(--font-secondary-rgb));
+        text-decoration: underline;
+      }
+      .btns {
+        display: flex;
+        justify-content: flex-end;
+
+        .delete_block,
+        .copy_block {
+          background: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .add_block_btn {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgba(var(--font-rgb));
+    border-radius: 50px;
+    font-size: 28px;
+    background: rgba(var(--background-rgb));
+    color: rgba(var(--font-rgb));
+    cursor: pointer;
+  }
+}

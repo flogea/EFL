@@ -1,0 +1,48 @@
+@import '../../../styles/colors';
+@import '../../../styles/rounding';
+
+.navbar {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 2rem;
+
+  a {
+    text-decoration: none;
+
+    .logo {
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+
+  .links {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 2rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      height: 100%;
+
+      .navlink {
+        color: $text_primary_buttons;
+        display: flex;
+        align-items: center;
+        height: 60%;
+        padding: 0 0.6rem;
+        border-radius: $borderRadiusS;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: $input_dark;
+        }
+      }
+    }
+  }
+}

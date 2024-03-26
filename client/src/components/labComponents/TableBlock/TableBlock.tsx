@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import styles from './TableBlock.module.scss';
 
 function TableBlock() {
   const [rows, setRows] = useState<Array<any>>([]);
   const [cols, setCols] = useState<Array<any>>([]);
+  const [tableData, setTableData] = useState<Object>({});
+
+  useEffect(() => {
+    console.log(rows, cols);
+    console.log(tableData);
+  }, [tableData]);
 
   const generateTable = () => {
+    const handleChangeTable = (e) => {
+      console.log(e.target.name);
+      setTableData((prevState) => ({ ...prevState, [e.target.name]: e.target.value }));
+    };
+
     return (
       <table>
         <caption>
-          <input type="text" />
+          <input type="text" placeholder="Название таблицы" />
         </caption>
         <tr>
           {cols.map(() => (
@@ -18,11 +31,11 @@ function TableBlock() {
           ))}
         </tr>
         <tbody>
-          {rows.map(() => (
+          {rows.map((_, row) => (
             <tr>
-              {cols.map(() => (
+              {cols.map((_, col) => (
                 <td>
-                  <input type="text" />
+                  <input type="text" name={`${row}_${col}`} onChange={handleChangeTable} />
                 </td>
               ))}
             </tr>

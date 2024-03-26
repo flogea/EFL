@@ -1,5 +1,5 @@
 // Text & Icons
-$text_primary: #001a34;
+$text_primary: #0058b1;
 $text_secondary: #4d5f71;
 $text_primary_buttons: #f5f5f5;
 $text_secondary_buttons: #f6f6f6;
@@ -24,8 +24,12 @@ $bg_card_products_ruble: linear-gradient(89deg, #401475 15.23%, #6e14be 83.95%);
 $separator: #757f8a;
 $separator_alert: #f53c14;
 $ctrl_Liberty: #005afe;
-$ctrl_Liberty_secondary: #d8dfea;
+// $ctrl_Liberty_secondary: #d8dfea;
+$ctrl_Liberty_secondary: rgba(255, 255, 255, 0.4);
 $ctrl_Liberty_hover: #337bfe;
 $ctrl_Liberty_pressed: #669cfe;
 $ctrl_status_wait: #f6be2c;
 $ctrl_status_success: #4caf50;
+
+//efl
+$input_dark: rgba(255, 255, 255, 0.055);

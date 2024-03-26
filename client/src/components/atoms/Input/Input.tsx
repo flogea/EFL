@@ -68,7 +68,6 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
     const [valueInput, setValueInput] = useState<string | undefined>(value || defaultValue);
     const inputRef = useRef<HTMLInputElement>(null);
     const inputRefCombine = useCombinedRef(ref, inputRef);
-    console.log(ref);
 
     const handleChangeValue: (e: FormEvent<HTMLInputElement>) => void = (e) => {
       setValueInput(e.currentTarget.value);
@@ -82,7 +81,7 @@ export const Input = forwardRef<HTMLInputElement, IInput>(
         <label
           // className={labelClasses}
           htmlFor={id}
-          // onClick={handleFocusLabel}
+        // onClick={handleFocusLabel}
         >
           {label}
         </label>

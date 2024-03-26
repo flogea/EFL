@@ -1,0 +1,10 @@
+.add_simple_test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .testname {
+    background: rgba(var(--background-secondary-rgb));
+  }
+}

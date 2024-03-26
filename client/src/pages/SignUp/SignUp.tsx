@@ -2,11 +2,13 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import styles from './SignUpPage.module.scss';
 import { FormLayout } from '../../components/atoms/FormLayout/FormLayout';
 import { FormValues } from '../../model/types/types';
-import { emailValidator, passwordValidator } from '../../model/validation/validation';
+import { baseValidator, emailValidator, passwordValidator } from '../../model/validation/validation';
 import { Input } from '../../components/atoms/Input/Input';
 import { Text } from '../../components/atoms/Text/Text';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../../components/atoms/Button/Button';
 
-function SignUp() {
+export const SignUp = () => {
   const {
     register,
     handleSubmit,
@@ -17,8 +19,8 @@ function SignUp() {
     watch,
   } = useForm<FormValues>({
     mode: 'all',
-    // defaultValues: {},
   });
+  const navigate = useNavigate()
 
   const handleSubmitSignUp = async () => {
     // try {
@@ -32,6 +34,7 @@ function SignUp() {
     // 	navigate('error');
     // 	// setError('old_password', { type: '400', message: `${err}` });
     // }
+    navigate('/')
   };
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -43,13 +46,28 @@ function SignUp() {
       <FormLayout>
         <Text tag="h1">Регистрация</Text>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Input type="label" id="name" name="name" label="Имя" />
-          <Input type="label" id="surname" name="surname" label="Фамилия" />
+          <Input type="label" id="name" placeholder="Имя" {...register('name', baseValidator)} />
+          {!!errors.name && (
+            <Text tag="span" size="xs" theme="alert">
+              {errors?.name?.message}
+            </Text>
+          )}
+          <Input type="label" id="surname" placeholder="Фамилия" {...register('surname', baseValidator)} />
+          {!!errors.surname && (
+            <Text tag="span" size="xs" theme="alert">
+              {errors?.surname?.message}
+            </Text>
+          )}
+          <Input type="label" id="group" placeholder="Группа" {...register('group', baseValidator)} />
+          {!!errors.group && (
+            <Text tag="span" size="xs" theme="alert">
+              {errors?.group?.message}
+            </Text>
+          )}
           <Input
             type="email"
             id="email"
-            // name="email"
-            label="Почта"
+            placeholder="Почта"
             {...register('email', emailValidator)}
           />
           {!!errors.email && (
@@ -60,7 +78,7 @@ function SignUp() {
           <Input
             type="password"
             id="password"
-            label="Пароль"
+            placeholder="Пароль"
             {...register('password', passwordValidator)}
           />
           {!!errors.password && (
@@ -71,7 +89,7 @@ function SignUp() {
           <Input
             type="password"
             id="password_repeat"
-            label="Повторите пароль"
+            placeholder="Повторите пароль"
             {...register('password_repeat', {
               required: 'Поле обязательно к заполнению',
               validate: (value) => {
@@ -86,13 +104,11 @@ function SignUp() {
               {errors?.password_repeat?.message}
             </Text>
           )}
+          <Button disabled={!isValid} type="submit" className={styles.submitBtn}>
+            Зарегестрироваться
+          </Button>
         </form>
-        <button type="submit" className={styles.submitBtn}>
-          Зарегестрироваться
-        </button>
       </FormLayout>
     </div>
   );
 }
-
-export default SignUp;

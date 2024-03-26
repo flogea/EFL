@@ -1,7 +1,5 @@
-import React from 'react';
+import { AddTest } from "../../components/organisms/AddTest/AddTest";
 
-function TestPage() {
-  return <div>TestPage</div>;
+export const TestPage = () => {
+  return <div><AddTest /></div>;
 }
-
-export default TestPage;

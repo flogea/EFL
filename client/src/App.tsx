@@ -1,18 +1,11 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ContructorPage, HomePage, SignInPage, SignUpPage, TestPage } from './pages';
+import { BrowserRouter, Route, RouterProvider, Routes } from 'react-router-dom';
+import { ContructorPage, HomePage, SignIn as SignInPage, SignUp as SignUpPage, TestPage } from './pages';
+import { router } from './router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="/register" element={<SignUpPage />} />
-        <Route path="/constructor" element={<ContructorPage />} />
-        <Route path="/test" element={<TestPage />} />
-      </Routes>
-    </BrowserRouter>
+    <RouterProvider router={router} />
   );
 }
 

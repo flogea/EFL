@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextBlock } from '../TextBlock';
 import { TableBlock } from '../TableBlock';
 import { PictureBlock } from '../PictureBlock';
@@ -14,7 +13,12 @@ const components = {
   text: {
     title: 'text',
     name: 'Текст',
-    data: <TextBlock />,
+    data: {
+      blockName: 'TextBlock',
+      content: {
+        text: 'hello world',
+      },
+    },
   },
   table: {
     title: 'table',
